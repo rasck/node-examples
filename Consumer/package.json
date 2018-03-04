@@ -1,16 +1,15 @@
 {
-  "name": "vash-example",
+  "name": "Consumer",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.2",
-    "vash": "^0.12.2"
+    "request": "^2.83.0"
   }
 }

@@ -19,7 +19,7 @@ app.get('/', (req,res) => {
     
 // });
 
-app.get('/book/:id', (req,res) => {
+app.get('api/book/:id', (req,res) => {
     mongoose.find('id', (err, result) => {
         
         res.render('book', { id: req.params.id });

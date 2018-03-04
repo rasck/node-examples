@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var hero = JSON.stringify({
+            id: 0,
+            name: "batman"
+        })
+
+        // GET
+        // var xhr = new XMLHttpRequest();
+        // xhr.open('GET', 'http://localhost:3000/0');
+        // // xhr.open('GET', 'https://webserv-idxifolvzf.now.sh/0');
+        // xhr.setRequestHeader('Content-Type', 'application/json');
+        // xhr.onload = function () {
+        //     if (xhr.status === 200) {
+        //         alert(xhr.response);
+        //     }
+        //     else if (xhr.status !== 200) {
+        //         alert('Something went wrong');
+        //     }
+        // };
+        // xhr.send();
+
+        // var xhr2 = new XMLHttpRequest();
+        // xhr2.open('POST', 'http://localhost:3000');
+        // // xhr.open('GET', 'https://webserv-idxifolvzf.now.sh/0');
+        // xhr2.setRequestHeader('Content-Type', 'application/json');
+        // xhr2.onload = function () {
+        //     if (xhr2.status === 200) {
+        //         alert(xhr2.response);
+        //     }
+        //     else if (xhr2.status !== 200) {
+        //         alert('Something went wrong');
+        //     }
+        // };
+        // xhr2.send(hero);
+
+
+        // var xhr2 = new XMLHttpRequest();
+        // xhr2.open('PUT', 'http://localhost:3000');
+        // // xhr.open('GET', 'https://webserv-idxifolvzf.now.sh/0');
+        // xhr2.setRequestHeader('Content-Type', 'application/json');
+        // xhr2.onload = function () {
+        //     if (xhr2.status === 200) {
+        //         alert(xhr2.response);
+        //     }
+        //     else if (xhr2.status !== 200) {
+        //         alert('Something went wrong');
+        //     }
+        // };
+        // xhr2.send(hero);
+
+        var xhr2 = new XMLHttpRequest();
+        //xhr2.open('DELETE', 'http://localhost:3000/0');
+        xhr2.open('DELETE', 'https://webserv-dukueozket.now.sh/0');
+        xhr2.setRequestHeader('Content-Type', 'application/json');
+        xhr2.onload = function () {
+            if (xhr2.status === 200) {
+                alert(xhr2.response);
+            }
+            else if (xhr2.status !== 200) {
+                alert('Something went wrong');
+            }
+        };
+        xhr2.send();
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
