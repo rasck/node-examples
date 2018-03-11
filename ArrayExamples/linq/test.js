@@ -36,7 +36,7 @@ describe("Linq", function() {
       let count = 0;
       numberOfTimesWhereShouldBeCalled = 7;
       let callback = msg => {
-        if (msg === "[Function]where has been called") count++;
+        if (msg === "[Function]where has been iterated") count++;
       };
       require("./index")({ cb: callback });
       // act
@@ -128,7 +128,6 @@ describe("Linq", function() {
       const expectedTotalNumberOfCalls = 10; // 4 * where + 2 * take + 2 * firstOrDefault + 2 * select = 10
       let callback = msg => {
         count++;
-        //console.log(msg);
       };
       require("./index")({ cb: callback });
       let idCount = 0;

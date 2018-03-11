@@ -1,17 +1,17 @@
 module.exports = options => {
-  // Todo: Remove CB and use sinon.assert.callCount(spy, num) from http://sinonjs.org/releases/v4.4.2/assertions/ instead.
+  // The callback function is there for educational purposes. So we can see how many times the functions has been called
   const cb = options ? options.cb : null;
 
   function* where(predicate, iterable = null) {
     for (const iterator of iterable ? iterable : this) {
-      if (cb) cb("[Function]where has been called", iterator);
+      if (cb) cb("[Function]where has been iterated", iterator);
       if (predicate(iterator)) yield iterator;
     }
   }
 
   function* take(number, iterable = null) {
     for (const iterator of iterable ? iterable : this) {
-      if (cb) cb("[Function]take has been called");
+      if (cb) cb("[Function]take has been iterated", iterator);
       if (0 < --number) yield iterator;
       else
         // signal done by return keyword
@@ -21,14 +21,14 @@ module.exports = options => {
 
   function* select(selector, iterable = null) {
     for (const iterator of iterable ? iterable : this) {
-      if (cb) cb("[Function]select has been called");
+      if (cb) cb("[Function]select has been iterated", iterator);
       yield selector(iterator);
     }
   }
 
   function firstOrDefault(predicate, iterable = null) {
     for (const iterator of iterable ? iterable : this) {
-      if (cb) cb("[Function]firstOrDefault has been called");
+      if (cb) cb("[Function]firstOrDefault has been iterated", iterator);
       if (predicate(iterator)) {
         return iterator;
       }
@@ -39,7 +39,7 @@ module.exports = options => {
   function first(predicate, iterable = null) {
     let count = 0;
     for (const iterator of iterable ? iterable : this) {
-      if (cb) cb("[Function]first has been called");
+      if (cb) cb("[Function]first has been iterated", iterator);
       if (predicate(iterator)) {
         return iterator;
       }
