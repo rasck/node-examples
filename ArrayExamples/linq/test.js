@@ -99,7 +99,7 @@ describe("Linq", function() {
     });
   });
   describe("take(number)", function() {
-    it("if number is less than 1 return one element from list", function() {
+    it("should return 1 element if number is less than one", function() {
       require("./index")();
       const f = fruits()
         .take(0)
@@ -108,7 +108,7 @@ describe("Linq", function() {
     });
   });
   describe("Chaining calls", function() {
-    it("It is possible to chain where, take and select calls", function() {
+    it("should be possible to chain the linq functions", function() {
       require("./index")();
       let count = 0;
       const apple = fruits()
@@ -122,13 +122,13 @@ describe("Linq", function() {
     });
   });
   describe("Chaining calls", function() {
-    it("A total of 10 function calls has been executed", function() {
+    it("should result in 10 itertions", function() {
       //arrange
       let count = 0;
-      const expectedTotalNumberOfCalls = 10; // 4 * where + 2 * take + 2 * firstOrDefault + 2 * select
+      const expectedTotalNumberOfCalls = 10; // 4 * where + 2 * take + 2 * firstOrDefault + 2 * select = 10
       let callback = msg => {
         count++;
-        console.log(msg);
+        //console.log(msg);
       };
       require("./index")({ cb: callback });
       let idCount = 0;
@@ -140,6 +140,37 @@ describe("Linq", function() {
           return { id: idCount++, fruit: f };
         })
         .firstOrDefault(f => f.id === 1);
+      // assert
+      assert.equal(count, expectedTotalNumberOfCalls);
+    });
+  });
+  describe("Chaining calls using built in array and custom functions", function() {
+    it("should result in 18 iterations", function() {
+      //arrange
+      let count = 0;
+      const expectedTotalNumberOfCalls = 18; // 10 filter + 3 custom take + 3 map + 2 find = 18
+      let idCount = 0;
+      //act
+      const apples = fruits().filter(f => {
+        count++;
+        return f === "apple";
+      }); // where
+      const apples2 = [];
+      let i = 0;
+      while (i < 3) {
+        count++;
+        apples2.push(apples[i]);
+        i++;
+      } // take - as custom splice
+      const apples3 = apples2
+        .map(f => {
+          count++;
+          return { id: idCount++, fruit: f };
+        }) // select
+        .find(f => {
+          count++;
+          return f.id === 1;
+        }); // firstOrDefault
       // assert
       assert.equal(count, expectedTotalNumberOfCalls);
     });
