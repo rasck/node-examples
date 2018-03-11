@@ -122,7 +122,7 @@ describe("Linq", function() {
     });
   });
   describe("Chaining calls", function() {
-    it("A total of x function calls has been executed", function() {
+    it("A total of 10 function calls has been executed", function() {
       //arrange
       let count = 0;
       const expectedTotalNumberOfCalls = 10; // 4 * where + 2 * take + 2 * firstOrDefault + 2 * select
