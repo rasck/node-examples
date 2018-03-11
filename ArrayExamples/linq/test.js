@@ -12,8 +12,6 @@ const fruits = () => [
   "apple"
 ];
 
-require("./index")({ debug: false });
-
 describe("Linq", function() {
   describe("where(predicate)", function() {
     it("where is a private function", function() {

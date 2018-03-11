@@ -57,7 +57,6 @@ module.exports = options => {
 
   //https://stackoverflow.com/questions/38580048/modifying-generator-function-prototype
   const Generator = Object.getPrototypeOf(function*() {});
-  const GeneratorFunction = Generator.constructor;
   Generator.prototype.where = where;
   Generator.prototype.take = take;
   Generator.prototype.select = select;
@@ -75,11 +74,9 @@ module.exports = options => {
   Array.prototype.select = function(selector) {
     return select(selector, this);
   };
-
   Array.prototype.first = function(predicate) {
     return first(predicate, this);
   };
-
   Array.prototype.firstOrDefault = function(predicate) {
     return firstOrDefault(predicate, this);
   };
