@@ -1,8 +1,3 @@
-var a = function()
-{
+var a = function() {};
 
-};
-
-if(a === true)
-
-a();
+if (a === true) a();
