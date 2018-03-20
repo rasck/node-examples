@@ -1,4 +1,4 @@
-// coiped from: https://github.com/rabbitmq/rabbitmq-tutorials/blob/master/javascript-nodejs/src/receive.js
+// copied from: https://github.com/rabbitmq/rabbitmq-tutorials/blob/master/javascript-nodejs/src/receive.js
 // slightly modified
 
 const amqp = require("amqplib/callback_api");

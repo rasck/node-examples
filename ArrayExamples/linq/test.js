@@ -14,8 +14,8 @@ const fruits = () => [
 
 describe("Linq", function() {
   describe("where(predicate)", function() {
-    it("where is a private function", function() {
-      require("./index")();
+    it("should throw and error because where is a private function", function() {
+      require("./index")(); // try to use where from the global scope of './index'
       assert.throws(() => {
         const apples = where(f => f === "apple", fruits()).toArray();
       }, "ReferenceError: where is not defined");

@@ -56,6 +56,7 @@ module.exports = options => {
   }
 
   //https://stackoverflow.com/questions/38580048/modifying-generator-function-prototype
+
   const Generator = Object.getPrototypeOf(function*() {});
   Generator.prototype.where = where;
   Generator.prototype.take = take;

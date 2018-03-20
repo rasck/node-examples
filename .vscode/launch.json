@@ -8,8 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "program":
-        "${workspaceRoot}/Persistence/05_mongo-example-auth-authorization/app.js",
+      "program": "${workspaceRoot}/Scope/app.js",
       "cwd": "${workspaceRoot}"
     },
     {

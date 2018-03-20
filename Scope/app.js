@@ -1,24 +1,26 @@
-var age = 34;
-var gender = 'female';
+var a = 34;
+var g = "female";
 
-var person = require('./person');
+var res = (function PersonModule(age, gender) {
+  function calcRealAge() {
+    if (gender === "female") return age + 10;
+    return age;
+  }
 
-console.log(person);
-
-var res = (function PeronModule(age, gender) {
-    function calcRealAge() {
-        if(gender === 'female') return age + 10;
-        return age;
+  return {
+    person: {
+      Name: "Jane",
+      Gender: gender,
+      Age: calcRealAge()
     }
-
-    return {
-        person : {
-            "Name" : 'Jane',
-            "Gender" : gender,
-            "Age" : calcRealAge()
-        }
-    }
-}(age, gender));
-
+  };
+})(a, g);
 
 console.log(res);
+
+
+
+
+/*var person = require("./person");
+
+console.log(person.personApi.getPerson(age, gender)); */
