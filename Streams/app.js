@@ -1,23 +1,9 @@
 // TODO: Transfer the contents from one file to another
 // use fs
 // use fs.createReadStream
-// use fs.createWriteStream 
+// use fs.createWriteStream
 // (hint, use write in the in the read stream's data event)
 //
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 var fs = require("fs");
 

@@ -17,7 +17,10 @@ function b(callback) {
 
 function c(callback) {
     console.log('c');
-    callback(42);
+    // do a lot of fancy calculations
+    var result = 42;
+    callback(result);
+    //return 42;
 }
 
 a();

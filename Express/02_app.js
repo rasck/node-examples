@@ -7,6 +7,11 @@ var port = process.env.PORT || 3000;
 
 app.listen(port);
 
+app.use("/", (req, res, next) => {
+  console.log(req.url);
+  next();
+});
+
 app.use("/assets", express.static(__dirname + "/public"));
 
 app.get("/", (req, res) => {
@@ -35,7 +40,8 @@ app.get("/book/:id", (req, res) => {
 app.get("/api/author/:authorId/book/:id", (req, res) => {
   // express will see that it is html
   res.send(
-    `<html><head></head><body><h1>Author: ${req.params
-      .authorId}</h1><h3>Book: ${req.params.id}</h3></body></html>`
+    `<html><head></head><body><h1>Author: ${
+      req.params.authorId
+    }</h1><h3>Book: ${req.params.id}</h3></body></html>`
   );
 });

@@ -6,16 +6,17 @@ var callback = function(err, client) {
   if (err) return console.log(err);
   console.log(client.Name);
 };
-clientfetchter.getClient(1, callback);
+// clientfetchter.getClient(1, callback);
 
-var client = clientfetchter.getClient(2, (err, result) => {
+// var client = clientfetchter.getClient(2, (err, result) => {
+//   if (err) console.log(err);
+
+//   console.log(result);
+// });
+
+var callback = (err, data) => {
   if (err) console.log(err);
 
-  console.log(result);
-});
-
-// clientfetchter.getStreamClient(1, '*', (err, data) => {
-//     if(err) console.log(err);
-
-//     console.log(data);
-// });
+  console.log(data);
+};
+clientfetchter.getStreamClient(1, "*", callback);
